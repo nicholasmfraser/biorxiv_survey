@@ -1,0 +1,627 @@
+---
+title: "Main Analysis"
+---
+
+# Load libraries ---------------------------------------------------------------
+
+```{r}
+
+library(tidyverse)
+library(patchwork)
+
+```
+
+# Themes -----------------------------------------------------------------------
+
+```{r}
+
+t <- theme(text = element_text(size = 10),
+           plot.title = element_text(size = 10, face = "bold"),
+           axis.title.x = element_text(size = 10, margin = margin(10, 0, 0, 0)),
+           axis.title.y = element_text(size = 10, margin = margin(0, 10, 0, 0)),
+           axis.text.x = element_text(size = 8),
+           axis.text.y = element_text(size = 8),
+           plot.margin = margin(10, 10, 10, 10))
+
+theme_set(theme_minimal() + t)
+
+```
+
+# Helpers ----------------------------------------------------------------------
+
+```{r}
+
+# Factorise likert levels for survey responses
+likert_factorize <- function(d) {
+  d %>%
+    mutate(response = factor(response, 
+                             levels = c("Strongly agree",
+                                        "Agree",
+                                        "Neutral",
+                                        "Disagree",
+                                        "Strongly disagree")))
+}
+
+# Make survey plots with likert scales
+plot_likert <- function(data, codes, title = NULL) {
+  
+  plot_labels <- codes %>%
+    filter(code %in% colnames(data)) %>%
+    mutate(code = fct_reorder(code, colnames(data)),
+           label = as.character(label)) %>%
+    pull(label)
+  
+  plot <- data %>%
+    pivot_longer(., 
+                 cols = starts_with("A"), 
+                 names_to = "code", 
+                 values_to = "response") %>%
+    likert_factorize() %>%
+    inner_join(codes, by="code") %>%
+    droplevels() %>%
+    group_by(label, response) %>%
+    summarize(n = n()) %>%
+    mutate(freq = n / sum(n)) %>%
+    ungroup() %>%
+    ggplot() +
+    geom_bar(aes(x = label, y = freq, fill = response), 
+             color = "grey50", width = 0.8, size = 0.25, 
+             stat = "identity", position = "stack") +
+    coord_flip() +
+    scale_x_discrete(labels = function(x) str_wrap(x, width = 60),
+                     limits = rev(plot_labels)) +
+    scale_y_continuous(labels = scales::percent) +
+    scale_fill_manual(values = colorspace::diverging_hcl(n = 5, 
+                                                         palette = "Blue-Red", 
+                                                         alpha = 0.8)) +
+    labs(x = "", y = "", fill = "", 
+         title = str_c(title, " (N = ", nrow(data), ")")) +
+    guides(fill = guide_legend(reverse = T)) +
+    theme(axis.title.x = element_blank(),
+          legend.position="bottom")
+  
+  return(plot)
+  
+}
+
+```
+
+# Load full response data ------------------------------------------------------
+
+```{r}
+
+responses <- read_csv("data/response_data_anonymised.csv")
+
+```
+
+# Demographics -----------------------------------------------------------------
+
+## Countries
+
+```{r}
+
+country <- responses %>%
+  select(country = starts_with("Country")) %>%
+  mutate(country = case_when(
+    country == "the United Kingdom of Great Britain and Northern Ireland" ~ "UK",
+    country == "United States of America" ~ "USA",
+    T ~ country
+  )) %>%
+  count(country) %>%
+  top_n(30, n) %>%
+  ggplot() +
+  geom_col(aes(x = reorder(country, n), y = n), 
+           fill = "grey75", color = "grey25", width = 0.8, size = 0.25) +
+  labs(y = "Participants", x = "", title = "Countries (Top 30)") +
+  scale_x_discrete(label = function(x) stringr::str_trunc(x, 30)) +
+  scale_y_continuous(expand = c(0, 0)) +
+  coord_flip(ylim = c(0, 400)) +
+  ggsave("outputs/figures/partials/demographics_country.png", width = 4, height = 6)
+
+```
+
+## Gender
+
+```{r}
+
+gender <- responses %>%
+  select(gender = starts_with("Gender")) %>% 
+  count(gender) %>%
+  ggplot() +
+  geom_col(aes(x = reorder(gender, n), y = n), 
+           fill = "grey75", color = "grey25", width = 0.8, size = 0.25) +
+  labs(y = "Participants", x = "", title = "Gender") +
+  scale_y_continuous(expand = c(0, 0)) +
+  coord_flip(ylim = c(0, 1250)) +
+  ggsave("outputs/figures/partials/demographics_gender.png", width = 4, height = 2)
+
+```
+
+## Career Status
+
+```{r}
+
+career_status <- responses %>%
+  select(career_status = starts_with("CareerStatus")) %>%
+  count(career_status) %>%
+  ggplot() +
+  geom_col(aes(x = reorder(career_status, n), y = n), 
+           fill = "grey75", color = "grey25", width = 0.8, size = 0.25) +
+  labs(y = "Participants", x = "", title = "Career Status") +
+  scale_x_discrete(label = function(x) stringr::str_trunc(x, 30)) +
+  scale_y_continuous(expand = c(0, 0)) +
+  coord_flip(ylim = c(0, 400))  +
+  ggsave("outputs/figures/partials/demographics_career_status.png", 
+         width = 4, height = 3)
+
+```
+
+## Institution Type
+
+```{r}
+
+institution <- responses %>%
+  select(institution_type = starts_with("Institution")) %>% 
+  count(institution_type) %>%
+  ggplot() +
+  geom_col(aes(x = reorder(institution_type, n), y = n), 
+           fill = "grey75", color = "grey25", width = 0.8, size = 0.25) +
+  labs(y = "Participants", x = "", title = "Institution Types") +
+  scale_x_discrete(label = function(x) stringr::str_trunc(x, 35)) +
+  scale_y_continuous(expand = c(0,0)) +
+  coord_flip(ylim = c(0, 1000)) +
+  ggsave("outputs/figures/partials/demographics_institution_type.png", width = 4, height = 3)
+
+```
+
+## Discipline
+
+```{r}
+
+discipline <- responses %>%
+  pivot_longer(cols = starts_with("Discipline"), 
+               names_to = "label", 
+               values_to = "response") %>%
+  inner_join(read_csv("data/coding/Discipline.csv"), by = "label") %>%
+  mutate(response = case_when(
+    response == "Yes" ~ T,
+    T ~ F
+  )) %>%
+  group_by(discipline) %>%
+  summarize(n = sum(response)) %>%
+  ggplot() +
+  geom_col(aes(x = reorder(discipline, n), y = n), 
+           fill = "grey75", color = "grey25", width = 0.8, size = 0.25) +
+  labs(y = "Participants", x = "", title = "Disciplines") +
+  scale_x_discrete(label = function(x) stringr::str_trunc(x, 35)) +
+  scale_y_continuous(expand = c(0,0)) +
+  coord_flip(ylim = c(0,350)) +
+  ggsave("outputs/figures/partials/demographics_discipline.png", width = 4, height = 6)
+
+```
+
+## Composite Figure 
+
+```{r}
+
+discipline + 
+  country + 
+  (gender / institution / career_status + plot_layout(heights = c(0.6, 1, 1.5))) +
+  plot_annotation(tag_levels = "A") +
+  ggsave("outputs/figures/demographics.png", width = 12, height = 6)
+
+```
+
+# Publishing behaviour ---------------------------------------------------------
+
+```{r}
+
+# Number of articles published
+
+pub_levels = c("0", "1-2", "3-5", "6-10", "11-20", "21+")
+
+plot_n_pub <- function(d, type) {
+  
+  d %>%
+    na.omit() %>%
+    mutate(n_pub = factor(n_pub, levels = pub_levels)) %>%
+    count(n_pub) %>%
+    ggplot() +
+    geom_col(aes(x = n_pub, y = n), 
+             fill = "grey75", color = "grey25", width = 0.8, size = 0.25)  +
+    labs(y = "Participants", x = "", 
+         title = str_wrap(str_c(type, ": journal articles published in past 5 years"), 50)) +
+    coord_flip()
+  
+}
+
+n_pub_cor <- responses %>%
+  select(n_pub = matches("NPublishedCor\\.")) %>%
+  plot_n_pub(., "Corresponding authorships")
+
+n_pub_co <- responses %>%
+  select(n_pub = matches("NPublishedCo\\.")) %>%
+  plot_n_pub(., "Co-authorships")
+
+# Proportion of articles deposited as preprints
+
+dep_levels = c("None of these articles were also deposited as preprints*",
+               "Some of these articles were also deposited as preprints*",
+               "All of these articles were also deposited as preprints*")
+
+dep_labels = c("None of these articles were also deposited as preprints",
+               "Some of these articles were also deposited as preprints",
+               "All of these articles were also deposited as preprints")
+
+plot_p_dep <- function(d, type) {
+  d %>%
+    na.omit() %>%
+    mutate(p_dep = factor(p_dep, levels = dep_levels, labels = dep_labels)) %>%
+    count(p_dep) %>%
+    ggplot() +
+    geom_col(aes(x = reorder(p_dep, -p_dep), y = n),
+             fill = "grey75", color = "grey25", width = 0.8, size = 0.25)  +
+    labs(y = "Participants", x = "", 
+         title = str_wrap(str_c(type, ": proportion of articles deposited as preprints"), 50)) +
+    scale_x_discrete(label = function(x) str_wrap(x, 40)) +
+    coord_flip()
+}
+
+p_dep_cor <- responses %>%
+  select(p_dep = matches("PDepositedCor\\.")) %>%
+  plot_p_dep(., "Corresponding authorships")
+
+p_dep_co <- responses %>%
+  select(p_dep = matches("PDepositedCo\\.")) %>%
+  plot_p_dep(., "Co-authorships")
+
+# Patchwork
+n_pub_cor + n_pub_co + p_dep_cor + p_dep_co +
+  plot_annotation(tag_levels = 'A') +
+  plot_layout(heights = c(1.75, 1), ncol = 2) +
+  ggsave("outputs/figures/publishing_behaviour.png",
+         width = 12,
+         height = 6)
+```
+
+# Preprint motivations ---------------------------------------------------------
+
+## Data
+
+```{r}
+
+deposited_codes <- read_csv("data/coding/deposited.csv", col_types = "ff")
+
+# Corresponding authorships
+cor_all_deposited <- responses %>% 
+  select(A = starts_with("CorAllDeposited")) %>%
+  na.omit()
+cor_some_deposited <- responses %>% 
+  select(A = starts_with("CorSomeDeposited")) %>%
+  na.omit()
+cor_deposited <- bind_rows(cor_all_deposited, cor_some_deposited)
+
+# Co-authorships
+co_all_deposited <- responses %>% 
+  select(A = starts_with("CoAllDeposited")) %>%
+  na.omit()
+co_some_deposited <- responses %>% 
+  select(A = starts_with("CoSomeDeposited")) %>%
+  na.omit()
+co_deposited <- bind_rows(co_all_deposited, co_some_deposited)
+
+```
+
+## Decision making
+
+```{r}
+
+# This refers to items A1, A4, A5, A2 and A3
+
+# Corresponding authorships
+p_cor_deposited_decision <- plot_likert(
+  cor_deposited %>% select(A1, A4, A5, A2, A3), 
+  deposited_codes,
+  "Corresponding Authorships")
+
+p_co_deposited_decision <- plot_likert(
+  co_deposited %>% select(A1, A4, A5, A2, A3), 
+  deposited_codes,
+  "Co-authorships")
+
+p_deposited_decision <- p_cor_deposited_decision + 
+  (p_co_deposited_decision + theme(axis.text.y = element_blank())) +
+  plot_layout(ncol = 2, guides = "collect") & theme(legend.position = "bottom")
+
+p_deposited_decision +
+  ggsave("outputs/figures/deposited_decision.png", width = 12, height = 5)
+
+```
+
+## Motivations
+
+```{r}
+
+# Items A6, A7, A8, A9, A10
+
+# What factors motivate preprint deposition (A6, A7, A8, A9, A10)
+p_cor_deposited_motivation <- plot_likert(
+  cor_deposited %>% select(A6, A7, A8, A9, A10), 
+  deposited_codes,
+  "Corresponding Authorships")
+
+p_co_deposited_motivation <- plot_likert(
+  co_deposited %>% select(A6, A7, A8, A9, A10), 
+  deposited_codes,
+  "Co-Authorships")
+
+p_deposited_motivation <- p_cor_deposited_motivation + 
+  (p_co_deposited_motivation + theme(axis.text.y = element_blank())) +
+  plot_layout(ncol = 2, guides = "collect") & theme(legend.position = "bottom")
+
+p_deposited_motivation +
+  ggsave("outputs/figures/deposited_motivation.png", width = 12, height = 5)
+
+```
+
+## Benefits
+
+```{r}
+
+# Items A11, A12
+
+p_cor_deposited_benefits <- plot_likert(
+  cor_deposited %>% select(A11, A12), 
+  deposited_codes,
+  "Corresponding Authorships")
+
+p_co_deposited_benefits <- plot_likert(
+  co_deposited %>% select(A11, A12), 
+  deposited_codes,
+  "Co-Authorships")
+
+p_deposited_benefits <- p_cor_deposited_benefits + 
+  (p_co_deposited_benefits + theme(axis.text.y = element_blank())) +
+  plot_layout(ncol = 2, guides = "collect") & theme(legend.position = "bottom")
+
+p_deposited_benefits +
+  ggsave("outputs/figures/deposited_benefits.png", width = 12, height = 3)
+
+```
+
+# Preprint demotivations -------------------------------------------------------
+
+## Data
+
+```{r}
+
+not_deposited_codes <- read_csv("data/coding/not_deposited.csv", col_types = "ff")
+
+# Corresponding authorships
+cor_none_not_deposited <- responses %>% 
+  select(A = starts_with("CorNoneNotDeposited")) %>%
+  na.omit()
+cor_some_not_deposited <- responses %>% 
+  select(A = starts_with("CorSomeNotDeposited")) %>%
+  na.omit()
+cor_not_deposited <- bind_rows(cor_none_not_deposited, cor_some_not_deposited)
+
+# Corresponding authorships
+co_none_not_deposited <- responses %>% 
+  select(A = starts_with("CoNoneNotDeposited")) %>%
+  na.omit()
+co_some_not_deposited <- responses %>% 
+  select(A = starts_with("CoSomeNotDeposited")) %>%
+  na.omit()
+co_not_deposited <- bind_rows(co_none_not_deposited, co_some_not_deposited)
+
+```
+
+## Plots
+
+```{r}
+
+p_cor_not_deposited_demotivations <- plot_likert(
+  cor_not_deposited,
+  not_deposited_codes,
+  "Corresponding Authorships")
+
+p_co_not_deposited_demotivations <- plot_likert(
+  co_not_deposited,
+  not_deposited_codes,
+  "Co-Authorships")
+
+p_not_deposited_demotivations <- p_cor_not_deposited_demotivations + 
+  (p_co_not_deposited_demotivations + theme(axis.text.y = element_blank())) +
+  plot_layout(ncol = 2, guides = "collect") & theme(legend.position = "bottom")
+
+p_not_deposited_demotivations +
+  ggsave("outputs/figures/not_deposited_demotivations.png", width = 12, height = 8)
+
+
+```
+
+# Preprint comparisons ---------------------------------------------------------
+
+## Data
+
+```{r}
+
+comparison_codes <- read_csv("data/coding/comparison.csv", col_types = "ff")
+
+# Corresponding authorships
+cor_comparison <- responses %>% 
+  select(A = starts_with("CorSomeComparison")) %>%
+  na.omit()
+
+# Co-authorships
+co_comparison <- responses %>% 
+  select(A = starts_with("CoSomeComparison")) %>%
+  na.omit()
+
+```
+
+## Plots
+
+```{r}
+
+p_cor_comparison <- plot_likert(
+  cor_comparison,
+  comparison_codes,
+  "Corresponding Authorships")
+
+p_co_comparison <- plot_likert(
+  co_comparison,
+  comparison_codes,
+  "Co-Authorships")
+
+p_comparison <- p_cor_comparison + 
+  (p_co_comparison + theme(axis.text.y = element_blank())) +
+  plot_layout(ncol = 2, guides = "collect") & theme(legend.position = "bottom")
+
+p_not_deposited_demotivations +
+  ggsave("outputs/figures/comparisons.png", width = 12, height = 6)
+
+```
+
+# Qualitative data -------------------------------------------------------------
+
+Note: Raw datasets not provided as part of archived data due to potential for
+participant identification
+
+## Deposited
+
+```{r}
+
+cor_deposited_free <- read_csv("data/qualitative/DepositedFreeCoded.csv") %>%
+  rename(
+    "id" = starts_with("id."),
+    "text" = starts_with("CorDepositedFree."),
+    "code" = starts_with("CorDepositedFreeCode")) %>%
+  filter(!is.na(code)) %>%
+  select(id, text, code) %>%
+  mutate(code = str_split(code, ";")) %>% 
+  unnest(code) %>%
+  mutate(code = str_trim(code))
+
+n_cor_deposited_free <- n_distinct(cor_deposited_free$id)
+
+cor_deposited_free %>%
+  group_by(code) %>%
+  summarise(n = n_distinct(id)) %>%
+  ungroup() %>%
+  mutate(prop = round(n * 100 / n_cor_deposited_free, 1))
+
+co_deposited_free <- read_csv("data/qualitative/DepositedFreeCoded.csv") %>%
+  rename(
+    "id" = starts_with("id."),
+    "text" = starts_with("CoDepositedFree."),
+    "code" = starts_with("CoDepositedFreeCode")) %>%
+  filter(!is.na(code)) %>%
+  select(id, text, code) %>%
+  mutate(code = str_split(code, ";")) %>% 
+  unnest(code) %>%
+  mutate(code = str_trim(code))
+
+n_co_deposited_free <- n_distinct(co_deposited_free$id)
+
+co_deposited_free %>%
+  group_by(code) %>%
+  summarise(n = n_distinct(id)) %>%
+  ungroup() %>%
+  mutate(prop = round(n * 100 / n_co_deposited_free, 1))
+
+```
+
+## Deposited
+
+```{r}
+
+cor_not_deposited_free <- read_csv("data/qualitative/NotDepositedFreeCoded.csv") %>%
+  rename(
+    "id" = starts_with("id."),
+    "text" = starts_with("CorNotDepositedFree."),
+    "code" = starts_with("CorNotDepositedFreeCode")) %>%
+  filter(!is.na(code)) %>%
+  select(id, text, code) %>%
+  mutate(code = str_split(code, ";")) %>% 
+  unnest(code) %>%
+  mutate(code = str_trim(code))
+
+n_cor_not_deposited_free <- n_distinct(cor_not_deposited_free$id)
+
+cor_not_deposited_free %>%
+  group_by(code) %>%
+  summarise(n = n_distinct(id)) %>%
+  ungroup() %>%
+  mutate(prop = round(n * 100 / n_cor_not_deposited_free, 1))
+
+co_not_deposited_free <- read_csv("data/qualitative/NotDepositedFreeCoded.csv") %>%
+  rename(
+    "id" = starts_with("id."),
+    "text" = starts_with("CoNotDepositedFree."),
+    "code" = starts_with("CoNotDepositedFreeCode")) %>%
+  filter(!is.na(code)) %>%
+  select(id, text, code) %>%
+  mutate(code = str_split(code, ";")) %>% 
+  unnest(code) %>%
+  mutate(code = str_trim(code))
+
+n_co_not_deposited_free <- n_distinct(co_not_deposited_free$id)
+
+co_not_deposited_free %>%
+  group_by(code) %>%
+  summarise(n = n_distinct(id)) %>%
+  ungroup() %>%
+  mutate(prop = round(n * 100 / n_co_not_deposited_free, 1))
+
+```
+
+## Comparisons
+
+```{r}
+
+cor_comparison_free <- read_csv("data/qualitative/ComparisonFreeCoded.csv") %>%
+  rename(
+    "id" = starts_with("id."),
+    "text" = starts_with("CorComparisonFree."),
+    "code" = starts_with("CorComparisonFreeCode")) %>%
+  filter(!is.na(code)) %>%
+  select(id, text, code) %>%
+  mutate(code = str_split(code, ";")) %>% 
+  unnest(code) %>%
+  mutate(code = str_trim(code))
+
+n_cor_comparison_free <- n_distinct(cor_comparison_free$id)
+
+cor_comparison_free %>%
+  group_by(code) %>%
+  summarise(n = n_distinct(id)) %>%
+  ungroup() %>%
+  mutate(prop = round(n * 100 / n_cor_comparison_free, 1))
+
+co_comparison_free <- read_csv("data/qualitative/ComparisonFreeCoded.csv") %>%
+  rename(
+    "id" = starts_with("id."),
+    "text" = starts_with("CoComparisonFree."),
+    "code" = starts_with("CoComparisonFreeCode")) %>%
+  filter(!is.na(code)) %>%
+  select(id, text, code) %>%
+  mutate(code = str_split(code, ";")) %>% 
+  unnest(code) %>%
+  mutate(code = str_trim(code))
+
+n_co_comparison_free <- n_distinct(co_comparison_free$id)
+
+co_comparison_free %>%
+  group_by(code) %>%
+  summarise(n = n_distinct(id)) %>%
+  ungroup() %>%
+  mutate(prop = round(n * 100 / n_co_comparison_free, 1))
+
+```
+
+
+
+
+

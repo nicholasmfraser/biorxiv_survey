@@ -1,0 +1,195 @@
+---
+title: "Regression Analysis"
+---
+
+# Load libraries ---------------------------------------------------------------
+
+```{r}
+
+library(tidyverse)
+
+```
+
+# Load data --------------------------------------------------------------------
+
+```{r}
+
+responses <- read_csv("data/response_data_anonymised.csv")
+
+```
+
+# Regression function ----------------------------------------------------------
+
+We conduct Ordinal Logistic Regression (OLR) for survey items on a Likert scale, 
+with predictors of gender, career status and country.
+
+```{r}
+
+fitOLR <- function(y, d) {
+
+  # Calculate fit
+  fit <- MASS::polr(y ~ gender + career_status + country, data = d, Hess = T)
+  # Coefficients
+  coefs <- exp(coef(fit))
+  # Confidence intervals
+  ci <- exp(confint(fit))
+  
+  return(cbind("OR" = round(coefs, 3), round(ci,3)))
+   
+}
+
+```
+
+# Cleaned and binned demographic data ------------------------------------------
+
+```{r}
+
+gender <- responses %>%
+  select(id = starts_with("id"),
+         gender = starts_with("Gender")) %>%
+  mutate(gender = case_when(gender == "Male" ~ "Male",
+                            gender == "Female" ~ "Female",
+                            T ~ NA_character_),
+         gender = factor(gender, levels = c("Male", "Female"))) %>%
+  na.omit()
+
+career_status <- responses %>%
+  select(id = starts_with("id"),
+         career_status = starts_with("CareerStatus")) %>%
+  mutate(career_status = case_when(career_status == "Professor" ~ "Late Career",
+                                   career_status == "Associate Professor" ~ "Late Career",
+                                   career_status == "Assistant Professor" ~ "Late Career",
+                                   career_status == "Postdoctoral researcher" ~ "Early Career",
+                                   career_status == "PhD student" ~ "Early Career",
+                                   career_status == "Masters student" ~ "Early Career",
+                                   T ~ NA_character_),
+         career_status = factor(career_status, levels = c("Late Career",
+                                                          "Early Career"))) %>%
+  na.omit()
+
+country <- responses %>%
+  select(id = starts_with("id"),
+         country = starts_with("Country")) %>%
+  mutate(country = case_when(country == "United States of America" ~ "US",
+                             country != "United States of America" ~ "non-US",
+                             T ~ NA_character_),
+         country = factor(country, levels = c("US", "non-US"))) %>%
+  na.omit()
+
+```
+
+# Deposited preprints ----------------------------------------------------------
+
+```{r}
+
+cor_all_deposited <- responses %>% 
+  select(id = starts_with("id"), 
+         A = starts_with("CorAllDeposited"))
+
+cor_some_deposited <- responses %>% 
+  select(id = starts_with("id"), 
+         A = starts_with("CorSomeDeposited"))
+
+cor_deposited <- bind_rows(cor_all_deposited, cor_some_deposited) %>%
+  na.omit() %>%
+  mutate_at(.vars = vars(starts_with("A")),
+            .funs = ~ factor(., levels = c("Strongly disagree", 
+                                           "Disagree", 
+                                           "Neutral", 
+                                           "Agree", 
+                                           "Strongly agree")))
+
+d <- cor_deposited %>%
+  inner_join(gender, by = "id") %>%
+  inner_join(career_status, by = "id") %>%
+  inner_join(country, by = "id") %>%
+  na.omit() %>%
+  select(-id)
+
+fitA1 <- fitOLR(d$A1, d)
+fitA2 <- fitOLR(d$A2, d)
+fitA3 <- fitOLR(d$A3, d)
+fitA4 <- fitOLR(d$A4, d)
+fitA5 <- fitOLR(d$A5, d)
+fitA6 <- fitOLR(d$A6, d)
+fitA7 <- fitOLR(d$A7, d)
+fitA8 <- fitOLR(d$A8, d)
+fitA9 <- fitOLR(d$A9, d)
+fitA10 <- fitOLR(d$A10, d)
+fitA11 <- fitOLR(d$A11, d)
+fitA12 <- fitOLR(d$A12, d)
+
+```
+
+# Comparisons ------------------------------------------------------------------
+
+```{r}
+
+cor_comparison <- responses %>% 
+  select(id = starts_with("id"), 
+         A = starts_with("CorSomeComparison")) %>%
+  mutate_at(.vars = vars(starts_with("A")),
+            .funs = ~ factor(., levels = c("Strongly disagree", 
+                                           "Disagree", 
+                                           "Neutral", 
+                                           "Agree", 
+                                           "Strongly agree")))
+
+d <- cor_comparison %>%
+  inner_join(gender, by = "id") %>%
+  inner_join(career_status, by = "id") %>%
+  inner_join(country, by = "id") %>%
+  na.omit() %>%
+  select(-id)
+
+
+fitA1 <- fitOLR(d$A1, d)
+fitA2 <- fitOLR(d$A2, d)
+fitA3 <- fitOLR(d$A3, d)
+fitA4 <- fitOLR(d$A4, d)
+fitA5 <- fitOLR(d$A5, d)
+fitA6 <- fitOLR(d$A6, d)
+
+```
+
+# Not Deposited ----------------------------------------------------------------
+
+```{r}
+
+cor_some_not_deposited <- responses %>% 
+  select(id = starts_with("id"), 
+         A = starts_with("CorSomeNotDeposited"))
+
+cor_none_not_deposited <- responses %>% 
+  select(id = starts_with("id"), 
+         A = starts_with("CorNoneNotDeposited"))
+
+cor_not_deposited <- bind_rows(cor_some_not_deposited, cor_none_not_deposited) %>%
+  na.omit() %>%
+  mutate_at(.vars = vars(starts_with("A")),
+            .funs = ~ factor(., levels = c("Strongly disagree", 
+                                           "Disagree", 
+                                           "Neutral", 
+                                           "Agree", 
+                                           "Strongly agree")))
+
+d <- cor_not_deposited %>%
+  inner_join(gender, by = "id") %>%
+  inner_join(career_status, by = "id") %>%
+  inner_join(country, by = "id") %>%
+  na.omit() %>%
+  select(-id)
+
+
+fitA1 <- fitOLR(d$A1, d)
+fitA2 <- fitOLR(d$A2, d)
+fitA3 <- fitOLR(d$A3, d)
+fitA4 <- fitOLR(d$A4, d)
+fitA5 <- fitOLR(d$A5, d)
+fitA6 <- fitOLR(d$A6, d)
+fitA7 <- fitOLR(d$A7, d)
+fitA8 <- fitOLR(d$A8, d)
+fitA9 <- fitOLR(d$A9, d)
+
+```
+

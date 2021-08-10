@@ -1,0 +1,116 @@
+---
+title: "Email Cleaning"
+---
+
+# Load libraries ---------------------------------------------------------------
+
+```{r}
+
+library(tidyverse)
+
+```
+
+# Load data --------------------------------------------------------------------
+
+```{r}
+
+emails <- read_csv("data/emails_raw.csv")
+
+```
+
+# Summary statistics -----------------------------------------------------------
+
+```{r}
+
+# How many distinct DOIs are there?
+emails %>% distinct(doi) %>% count()
+
+# How many distinct email addresses are there?
+emails %>% distinct(email) %>% count()
+
+```
+
+# Validate email addresses -----------------------------------------------------
+
+```{r}
+
+# Function for validation - see https://www.r-bloggers.com/validating-email-adresses-in-r/
+# This is quite basic and doesn't catch all!
+# LimeSurvey has email validation built in, so not too important, but good to get an overview
+isValidEmail <- function(x) {
+	grepl("\\<[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}\\>", as.character(x), ignore.case=TRUE)
+}
+
+# Final cleaned email addresses
+emails_clean <- emails %>%
+  # clean up strings - remove whitespace, convert to lowercase
+  mutate(email = stringr::str_trim(email),
+         email = stringr::str_squish(email),
+         email = stringr::str_to_lower(email)) %>%
+  mutate(is_valid = isValidEmail(email)) %>%
+  filter(is_valid == T) %>%
+  distinct(email)
+
+# save to csv
+write_csv(emails_clean, "data/emails_clean.csv")
+
+```
+
+# Other ------------------------------------------------------------------------
+
+```{r}
+
+# Some fun - what are most popular email hosts used?
+as_tibble(str_split_fixed(read_csv("data/emails_clean.csv") %>% 
+                            pull(email), "@", 2)) %>%
+  select(V2) %>%
+  rename("host" = "V2") %>%
+  count(host) %>%
+  top_n(30, n) %>%
+  ggplot(aes(x = host, y = n)) +
+  geom_bar(stat = "identity") +
+  coord_flip()
+
+```
+
+# Building email lists ---------------------------------------------------------
+
+The list of clean email addresses is uploaded to LimeSurvey, and survey tokens are generated.
+Here, we use the tokens to manually create columns for invitation and optout URLs.
+These URLs are then added to each email via mail merge in MS Word.
+Finally, the list of participants is split into files with batches of 500 for sending.
+
+```{r}
+
+emails_limesurvey <- read_csv("data/emails_limesurvey.csv") %>%
+  mutate(invitation_url = paste0("https://tigereye.informatik.uni-kiel.de/limesurvey/index.php/564879?token=", token, "&lang=en"),
+         optout_url = paste0("https://tigereye.informatik.uni-kiel.de/limesurvey/index.php/optout/tokens/564879?langcode=en&token=", token))
+
+emails_limesurvey %>%
+  group_by(g = ceiling(row_number() / 500)) %>% 
+  do(write_csv(., paste0("data/email_batches/batch_", .$g[1], '.csv')))
+
+```
+
+Reminder handling: we use the same process as above, but filter for those who have not
+opted out, who have not yet completed the survey, and who were not manually flagged (e.g.
+due to unhappy email responses from the first invitation batches)
+
+```{r}
+
+emails_limesurvey_reminder <- read_csv("data/emails_limesurvey_reminder.csv") %>%
+  filter(emailstatus == "OK",
+         completed == "N",
+         usesleft == 1,
+         flagged == 0) %>%
+  mutate(invitation_url = paste0("https://tigereye.informatik.uni-kiel.de/limesurvey/index.php/564879?token=", token, "&lang=en"),
+         optout_url = paste0("https://tigereye.informatik.uni-kiel.de/limesurvey/index.php/optout/tokens/564879?langcode=en&token=", token))
+
+emails_limesurvey_reminder %>%
+  group_by(g = ceiling(row_number() / 500)) %>% 
+  do(write_csv(., paste0("data/email_batches_reminder/batch_", .$g[1], '.csv')))
+
+```
+
+
+

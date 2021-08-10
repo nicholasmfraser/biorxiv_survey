@@ -1,0 +1,2079 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<questionnaire id="564879">
+  <title>bioRxiv preprints: a survey on motivations and selection strategies</title>
+  <investigator/>
+  <dataCollector/>
+  <questionnaireInfo>
+    <position>before</position>
+    <text>&lt;p&gt;Dear participant,&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;Thank you for visiting this survey. My name is Nicholas Fraser, I am a postdoctoral researcher in the field of bibliometrics at the Leibniz Information Center for Economics, Kiel, Germany (https://www.zbw.eu).&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;You have been contacted because your email address was listed as a corresponding email address for a preprint deposited on bioRxiv (https://www.biorxiv.org). In the following survey, I will ask you some questions related to your strategies and motivations for selecting scientific articles to deposit as preprints. This study is being conducted as part of a wider project to understand the factors influencing the impact of making scientific papers openly accessible.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;The survey should take approximately 10 minutes to complete.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;If you have any questions or concerns regarding this survey, please contact me directly at n.fraser@zbw.eu.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;I appreciate your time and input.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;Nicholas Fraser&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt; &lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;&lt;u&gt;Privacy Policy&lt;/u&gt;&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;You have received this survey because your email address is listed as the corresponding email address for a preprint deposited on bioRxiv (https://www.biorxiv.org). Please note that myself and my collaborators in this study are independent researchers and that this survey is not affiliated with bioRxiv or its operator, Cold Spring Harbor Laboratory (https://www.cshl.edu). Your participation in this survey is entirely voluntary, and you may leave at any time. The survey responses gathered here are completely anonymous. The response data will be stored on a server that is maintained by the University of Kiel, Germany. The survey questions and response data will subsequently be published (in fully anonymised form) on the open access research repository Zenodo (https://zenodo.org).&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt; &lt;/p&gt;</text>
+    <administration>self</administration>
+  </questionnaireInfo>
+  <questionnaireInfo>
+    <position>after</position>
+    <text>&lt;p&gt;Thank you for participating. Should you have any questions, comments or concerns regarding this survey, please contact me directly at n.fraser@zbw.eu.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;Nicholas Fraser&lt;/p&gt;</text>
+    <administration>self</administration>
+  </questionnaireInfo>
+  <section id="989">
+    <sectionInfo>
+      <position>title</position>
+      <text>Personal Information</text>
+      <administration>self</administration>
+    </sectionInfo>
+    <question>
+      <text>Please select your current country of residence:</text>
+      <response varName="Country">
+        <fixed>
+          <category>
+            <label>Albania</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>Algeria</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>Andorra</label>
+            <value>A3</value>
+          </category>
+          <category>
+            <label>Angola</label>
+            <value>A4</value>
+          </category>
+          <category>
+            <label>Antigua and Barbuda</label>
+            <value>A5</value>
+          </category>
+          <category>
+            <label>Argentina</label>
+            <value>A6</value>
+          </category>
+          <category>
+            <label>Armenia</label>
+            <value>A7</value>
+          </category>
+          <category>
+            <label>Australia</label>
+            <value>A8</value>
+          </category>
+          <category>
+            <label>Austria</label>
+            <value>A9</value>
+          </category>
+          <category>
+            <label>Azerbaijan</label>
+            <value>A10</value>
+          </category>
+          <category>
+            <label>Bahamas</label>
+            <value>A11</value>
+          </category>
+          <category>
+            <label>Bahrain</label>
+            <value>A12</value>
+          </category>
+          <category>
+            <label>Bangladesh</label>
+            <value>A13</value>
+          </category>
+          <category>
+            <label>Barbados</label>
+            <value>A14</value>
+          </category>
+          <category>
+            <label>Belarus</label>
+            <value>A15</value>
+          </category>
+          <category>
+            <label>Belgium</label>
+            <value>A16</value>
+          </category>
+          <category>
+            <label>Belize</label>
+            <value>A17</value>
+          </category>
+          <category>
+            <label>Benin</label>
+            <value>A18</value>
+          </category>
+          <category>
+            <label>Bhutan</label>
+            <value>A19</value>
+          </category>
+          <category>
+            <label>Bolivia (Plurinational State of)</label>
+            <value>A20</value>
+          </category>
+          <category>
+            <label>Bosnia and Herzegovina</label>
+            <value>A21</value>
+          </category>
+          <category>
+            <label>Botswana</label>
+            <value>A22</value>
+          </category>
+          <category>
+            <label>Brazil</label>
+            <value>A23</value>
+          </category>
+          <category>
+            <label>Brunei Darussalam</label>
+            <value>A24</value>
+          </category>
+          <category>
+            <label>Bulgaria</label>
+            <value>A25</value>
+          </category>
+          <category>
+            <label>Burkina Faso</label>
+            <value>A26</value>
+          </category>
+          <category>
+            <label>Burundi</label>
+            <value>A27</value>
+          </category>
+          <category>
+            <label>Cabo Verde</label>
+            <value>A28</value>
+          </category>
+          <category>
+            <label>Cambodia</label>
+            <value>A29</value>
+          </category>
+          <category>
+            <label>Cameroon</label>
+            <value>A30</value>
+          </category>
+          <category>
+            <label>Canada</label>
+            <value>A31</value>
+          </category>
+          <category>
+            <label>Central African Republic</label>
+            <value>A32</value>
+          </category>
+          <category>
+            <label>Chad</label>
+            <value>A33</value>
+          </category>
+          <category>
+            <label>Chile</label>
+            <value>A34</value>
+          </category>
+          <category>
+            <label>China</label>
+            <value>A35</value>
+          </category>
+          <category>
+            <label>Colombia</label>
+            <value>A36</value>
+          </category>
+          <category>
+            <label>Comoros</label>
+            <value>A37</value>
+          </category>
+          <category>
+            <label>Congo</label>
+            <value>A38</value>
+          </category>
+          <category>
+            <label>Cook Islands</label>
+            <value>A39</value>
+          </category>
+          <category>
+            <label>Costa Rica</label>
+            <value>A40</value>
+          </category>
+          <category>
+            <label>Côte d’Ivoire</label>
+            <value>A41</value>
+          </category>
+          <category>
+            <label>Croatia</label>
+            <value>A42</value>
+          </category>
+          <category>
+            <label>Cuba</label>
+            <value>A43</value>
+          </category>
+          <category>
+            <label>Cyprus</label>
+            <value>A44</value>
+          </category>
+          <category>
+            <label>Czech Republic</label>
+            <value>A45</value>
+          </category>
+          <category>
+            <label>Democratic People’s Republic of Korea</label>
+            <value>A46</value>
+          </category>
+          <category>
+            <label>Congo</label>
+            <value>A47</value>
+          </category>
+          <category>
+            <label>Denmark</label>
+            <value>A48</value>
+          </category>
+          <category>
+            <label>Djibouti</label>
+            <value>A49</value>
+          </category>
+          <category>
+            <label>Dominica</label>
+            <value>A50</value>
+          </category>
+          <category>
+            <label>Dominican Republic</label>
+            <value>A51</value>
+          </category>
+          <category>
+            <label>Ecuador</label>
+            <value>A52</value>
+          </category>
+          <category>
+            <label>Egypt</label>
+            <value>A53</value>
+          </category>
+          <category>
+            <label>El Salvador</label>
+            <value>A54</value>
+          </category>
+          <category>
+            <label>Equatorial Guinea</label>
+            <value>A55</value>
+          </category>
+          <category>
+            <label>Eritrea</label>
+            <value>A56</value>
+          </category>
+          <category>
+            <label>Estonia</label>
+            <value>A57</value>
+          </category>
+          <category>
+            <label>Ethiopia</label>
+            <value>A58</value>
+          </category>
+          <category>
+            <label>Fiji</label>
+            <value>A59</value>
+          </category>
+          <category>
+            <label>Finland</label>
+            <value>A60</value>
+          </category>
+          <category>
+            <label>France</label>
+            <value>A61</value>
+          </category>
+          <category>
+            <label>Gabon</label>
+            <value>A62</value>
+          </category>
+          <category>
+            <label>Gambia</label>
+            <value>A63</value>
+          </category>
+          <category>
+            <label>Georgia</label>
+            <value>A64</value>
+          </category>
+          <category>
+            <label>Germany</label>
+            <value>A65</value>
+          </category>
+          <category>
+            <label>Ghana</label>
+            <value>A66</value>
+          </category>
+          <category>
+            <label>Greece</label>
+            <value>A67</value>
+          </category>
+          <category>
+            <label>Grenada</label>
+            <value>A68</value>
+          </category>
+          <category>
+            <label>Guatemala</label>
+            <value>A69</value>
+          </category>
+          <category>
+            <label>Guinea</label>
+            <value>A70</value>
+          </category>
+          <category>
+            <label>Guinea-Bissau</label>
+            <value>A71</value>
+          </category>
+          <category>
+            <label>Guyana</label>
+            <value>A72</value>
+          </category>
+          <category>
+            <label>Haiti</label>
+            <value>A73</value>
+          </category>
+          <category>
+            <label>Honduras</label>
+            <value>A74</value>
+          </category>
+          <category>
+            <label>Hungary</label>
+            <value>A75</value>
+          </category>
+          <category>
+            <label>Iceland</label>
+            <value>A76</value>
+          </category>
+          <category>
+            <label>India</label>
+            <value>A77</value>
+          </category>
+          <category>
+            <label>Indonesia</label>
+            <value>A78</value>
+          </category>
+          <category>
+            <label>Iran (Islamic Republic of)</label>
+            <value>A79</value>
+          </category>
+          <category>
+            <label>Iraq</label>
+            <value>A80</value>
+          </category>
+          <category>
+            <label>Ireland</label>
+            <value>A81</value>
+          </category>
+          <category>
+            <label>Israel</label>
+            <value>A82</value>
+          </category>
+          <category>
+            <label>Italy</label>
+            <value>A83</value>
+          </category>
+          <category>
+            <label>Jamaica</label>
+            <value>A84</value>
+          </category>
+          <category>
+            <label>Japan</label>
+            <value>A85</value>
+          </category>
+          <category>
+            <label>Jordan</label>
+            <value>A86</value>
+          </category>
+          <category>
+            <label>Kazakhstan</label>
+            <value>A87</value>
+          </category>
+          <category>
+            <label>Kenya</label>
+            <value>A88</value>
+          </category>
+          <category>
+            <label>Kiribati</label>
+            <value>A89</value>
+          </category>
+          <category>
+            <label>Kuwait</label>
+            <value>A90</value>
+          </category>
+          <category>
+            <label>Kyrgyzstan</label>
+            <value>A91</value>
+          </category>
+          <category>
+            <label>Lao People’s Democratic Republic</label>
+            <value>A92</value>
+          </category>
+          <category>
+            <label>Latvia</label>
+            <value>A93</value>
+          </category>
+          <category>
+            <label>Lebanon</label>
+            <value>A94</value>
+          </category>
+          <category>
+            <label>Lesotho</label>
+            <value>A95</value>
+          </category>
+          <category>
+            <label>Liberia</label>
+            <value>A96</value>
+          </category>
+          <category>
+            <label>Libya</label>
+            <value>A97</value>
+          </category>
+          <category>
+            <label>Lithuania</label>
+            <value>A98</value>
+          </category>
+          <category>
+            <label>Luxembourg</label>
+            <value>A99</value>
+          </category>
+          <category>
+            <label>Madagascar</label>
+            <value>A100</value>
+          </category>
+          <category>
+            <label>Malawi</label>
+            <value>A101</value>
+          </category>
+          <category>
+            <label>Malaysia</label>
+            <value>A102</value>
+          </category>
+          <category>
+            <label>Maldives</label>
+            <value>A103</value>
+          </category>
+          <category>
+            <label>Mali</label>
+            <value>A104</value>
+          </category>
+          <category>
+            <label>Malta</label>
+            <value>A105</value>
+          </category>
+          <category>
+            <label>Marshall Islands</label>
+            <value>A106</value>
+          </category>
+          <category>
+            <label>Mauritania</label>
+            <value>A107</value>
+          </category>
+          <category>
+            <label>Mauritius</label>
+            <value>A108</value>
+          </category>
+          <category>
+            <label>Mexico</label>
+            <value>A109</value>
+          </category>
+          <category>
+            <label>Micronesia (Federated States of)</label>
+            <value>A110</value>
+          </category>
+          <category>
+            <label>Monaco</label>
+            <value>A111</value>
+          </category>
+          <category>
+            <label>Mongolia</label>
+            <value>A112</value>
+          </category>
+          <category>
+            <label>Montenegro</label>
+            <value>A113</value>
+          </category>
+          <category>
+            <label>Morocco</label>
+            <value>A114</value>
+          </category>
+          <category>
+            <label>Mozambique</label>
+            <value>A115</value>
+          </category>
+          <category>
+            <label>Myanmar</label>
+            <value>A116</value>
+          </category>
+          <category>
+            <label>Namibia</label>
+            <value>A117</value>
+          </category>
+          <category>
+            <label>Nauru</label>
+            <value>A118</value>
+          </category>
+          <category>
+            <label>Nepal</label>
+            <value>A119</value>
+          </category>
+          <category>
+            <label>Netherlands</label>
+            <value>A120</value>
+          </category>
+          <category>
+            <label>New Zealand</label>
+            <value>A121</value>
+          </category>
+          <category>
+            <label>Nicaragua</label>
+            <value>A122</value>
+          </category>
+          <category>
+            <label>Niger</label>
+            <value>A123</value>
+          </category>
+          <category>
+            <label>Nigeria</label>
+            <value>A124</value>
+          </category>
+          <category>
+            <label>Niue</label>
+            <value>A125</value>
+          </category>
+          <category>
+            <label>Norway</label>
+            <value>A126</value>
+          </category>
+          <category>
+            <label>Oman</label>
+            <value>A127</value>
+          </category>
+          <category>
+            <label>Pakistan</label>
+            <value>A128</value>
+          </category>
+          <category>
+            <label>Palau</label>
+            <value>A129</value>
+          </category>
+          <category>
+            <label>Panama</label>
+            <value>A130</value>
+          </category>
+          <category>
+            <label>Papua New Guinea</label>
+            <value>A131</value>
+          </category>
+          <category>
+            <label>Paraguay</label>
+            <value>A132</value>
+          </category>
+          <category>
+            <label>Peru</label>
+            <value>A133</value>
+          </category>
+          <category>
+            <label>Philippines</label>
+            <value>A134</value>
+          </category>
+          <category>
+            <label>Poland</label>
+            <value>A135</value>
+          </category>
+          <category>
+            <label>Portugal</label>
+            <value>A136</value>
+          </category>
+          <category>
+            <label>Puerto Rico</label>
+            <value>A137</value>
+          </category>
+          <category>
+            <label>Qatar</label>
+            <value>A138</value>
+          </category>
+          <category>
+            <label>Republic of Korea</label>
+            <value>A139</value>
+          </category>
+          <category>
+            <label>Republic of Moldova</label>
+            <value>A140</value>
+          </category>
+          <category>
+            <label>Romania</label>
+            <value>A141</value>
+          </category>
+          <category>
+            <label>Russian Federation</label>
+            <value>A142</value>
+          </category>
+          <category>
+            <label>Rwanda</label>
+            <value>A143</value>
+          </category>
+          <category>
+            <label>Saint Kitts and Nevis</label>
+            <value>A144</value>
+          </category>
+          <category>
+            <label>Saint Lucia</label>
+            <value>A145</value>
+          </category>
+          <category>
+            <label>Saint Vincent and the Grenadines</label>
+            <value>A146</value>
+          </category>
+          <category>
+            <label>Samoa</label>
+            <value>A147</value>
+          </category>
+          <category>
+            <label>San Marino</label>
+            <value>A148</value>
+          </category>
+          <category>
+            <label>Sao Tome and Principe</label>
+            <value>A149</value>
+          </category>
+          <category>
+            <label>Saudi Arabia</label>
+            <value>A150</value>
+          </category>
+          <category>
+            <label>Senegal</label>
+            <value>A151</value>
+          </category>
+          <category>
+            <label>Serbia</label>
+            <value>A152</value>
+          </category>
+          <category>
+            <label>Seychelles</label>
+            <value>A153</value>
+          </category>
+          <category>
+            <label>Sierra Leone</label>
+            <value>A154</value>
+          </category>
+          <category>
+            <label>Singapore</label>
+            <value>A155</value>
+          </category>
+          <category>
+            <label>Slovakia</label>
+            <value>A156</value>
+          </category>
+          <category>
+            <label>Slovenia</label>
+            <value>A157</value>
+          </category>
+          <category>
+            <label>Solomon Islands</label>
+            <value>A158</value>
+          </category>
+          <category>
+            <label>Somalia</label>
+            <value>A159</value>
+          </category>
+          <category>
+            <label>South Africa</label>
+            <value>A160</value>
+          </category>
+          <category>
+            <label>South Sudan</label>
+            <value>A161</value>
+          </category>
+          <category>
+            <label>Spain</label>
+            <value>A162</value>
+          </category>
+          <category>
+            <label>Sri Lanka</label>
+            <value>A163</value>
+          </category>
+          <category>
+            <label>Sudan</label>
+            <value>A164</value>
+          </category>
+          <category>
+            <label>Suriname</label>
+            <value>A165</value>
+          </category>
+          <category>
+            <label>Swaziland</label>
+            <value>A166</value>
+          </category>
+          <category>
+            <label>Sweden</label>
+            <value>A167</value>
+          </category>
+          <category>
+            <label>Switzerland</label>
+            <value>A168</value>
+          </category>
+          <category>
+            <label>Syrian Arab Republic</label>
+            <value>A169</value>
+          </category>
+          <category>
+            <label>Tajikistan</label>
+            <value>A170</value>
+          </category>
+          <category>
+            <label>Thailand</label>
+            <value>A171</value>
+          </category>
+          <category>
+            <label>The former Yugoslav Republic of Macedonia</label>
+            <value>A172</value>
+          </category>
+          <category>
+            <label>Timor-Leste</label>
+            <value>A173</value>
+          </category>
+          <category>
+            <label>Togo</label>
+            <value>A174</value>
+          </category>
+          <category>
+            <label>Tokelau</label>
+            <value>A175</value>
+          </category>
+          <category>
+            <label>Tonga</label>
+            <value>A176</value>
+          </category>
+          <category>
+            <label>Trinidad and Tobago</label>
+            <value>A177</value>
+          </category>
+          <category>
+            <label>Tunisia</label>
+            <value>A178</value>
+          </category>
+          <category>
+            <label>Turkey</label>
+            <value>A179</value>
+          </category>
+          <category>
+            <label>Turkmenistan</label>
+            <value>A180</value>
+          </category>
+          <category>
+            <label>Tuvalu</label>
+            <value>A181</value>
+          </category>
+          <category>
+            <label>Uganda</label>
+            <value>A182</value>
+          </category>
+          <category>
+            <label>Ukraine</label>
+            <value>A183</value>
+          </category>
+          <category>
+            <label>United Arab Emirates</label>
+            <value>A184</value>
+          </category>
+          <category>
+            <label>the United Kingdom of Great Britain and Northern Ireland</label>
+            <value>A185</value>
+          </category>
+          <category>
+            <label>United Republic of Tanzania</label>
+            <value>A186</value>
+          </category>
+          <category>
+            <label>United States of America</label>
+            <value>A187</value>
+          </category>
+          <category>
+            <label>Uruguay</label>
+            <value>A188</value>
+          </category>
+          <category>
+            <label>Uzbekistan</label>
+            <value>A189</value>
+          </category>
+          <category>
+            <label>Vanuatu</label>
+            <value>A190</value>
+          </category>
+          <category>
+            <label>Venezuela (Bolivarian Republic of)</label>
+            <value>A191</value>
+          </category>
+          <category>
+            <label>Viet Nam</label>
+            <value>A192</value>
+          </category>
+          <category>
+            <label>Yemen</label>
+            <value>A193</value>
+          </category>
+          <category>
+            <label>Zambia</label>
+            <value>A194</value>
+          </category>
+          <category>
+            <label>Zimbabwe</label>
+            <value>A195</value>
+          </category>
+          <category>
+            <label>Prefer not to say</label>
+            <value>A196</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>Please select your main scientific discipline(s):</text>
+      <directive>
+        <position>during</position>
+        <text>Note: disciplines listed here conform to the main subject areas listed on bioRxiv</text>
+        <administration>self</administration>
+      </directive>
+      <response varName="Discipline_A1">
+        <fixed>
+          <category>
+            <label>Animal Behaviour and Cognition</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="Discipline_A2">
+        <fixed>
+          <category>
+            <label>Biochemistry</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="Discipline_A3">
+        <fixed>
+          <category>
+            <label>Bioengineering</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="Discipline_A4">
+        <fixed>
+          <category>
+            <label>Bioinformatics</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="Discipline_A5">
+        <fixed>
+          <category>
+            <label>Biophysics</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="Discipline_A6">
+        <fixed>
+          <category>
+            <label>Cancer Biology</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="Discipline_A7">
+        <fixed>
+          <category>
+            <label>Cell Biology</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="Discipline_A8">
+        <fixed>
+          <category>
+            <label>Clinical Trials</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="Discipline_A9">
+        <fixed>
+          <category>
+            <label>Developmental Biology</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="Discipline_A10">
+        <fixed>
+          <category>
+            <label>Ecology</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="Discipline_A11">
+        <fixed>
+          <category>
+            <label>Epidemiology</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="Discipline_A12">
+        <fixed>
+          <category>
+            <label>Evolutionary Biology</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="Discipline_A13">
+        <fixed>
+          <category>
+            <label>Genetics</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="Discipline_A14">
+        <fixed>
+          <category>
+            <label>Genomics</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="Discipline_A15">
+        <fixed>
+          <category>
+            <label>Immunology</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="Discipline_A16">
+        <fixed>
+          <category>
+            <label>Microbiology</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="Discipline_A17">
+        <fixed>
+          <category>
+            <label>Molecular Biology</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="Discipline_A18">
+        <fixed>
+          <category>
+            <label>Neuroscience</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="Discipline_A19">
+        <fixed>
+          <category>
+            <label>Paleontology</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="Discipline_A20">
+        <fixed>
+          <category>
+            <label>Pathology</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="Discipline_A21">
+        <fixed>
+          <category>
+            <label>Pharmacology and Toxicology</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="Discipline_A22">
+        <fixed>
+          <category>
+            <label>Physiology</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="Discipline_A23">
+        <fixed>
+          <category>
+            <label>Plant Biology</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="Discipline_A24">
+        <fixed>
+          <category>
+            <label>Scientific Communication and Education</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="Discipline_A25">
+        <fixed>
+          <category>
+            <label>Synthetic Biology</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="Discipline_A26">
+        <fixed>
+          <category>
+            <label>Systems Biology</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="Discipline_A27">
+        <fixed>
+          <category>
+            <label>Zoology</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="Discipline_A28">
+        <fixed>
+          <category>
+            <label>Other</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="Discipline_A29">
+        <fixed>
+          <category>
+            <label>Prefer not to say</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>Please select your gender:</text>
+      <response varName="Gender">
+        <fixed>
+          <category>
+            <label>Female</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>Male</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>Other</label>
+            <value>A3</value>
+          </category>
+          <category>
+            <label>Prefer not to say</label>
+            <value>A4</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>Please select your current career status:</text>
+      <response varName="CareerStatus">
+        <fixed>
+          <category>
+            <label>Bachelors student</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>Masters student</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>PhD student</label>
+            <value>A3</value>
+          </category>
+          <category>
+            <label>Postdoctoral researcher</label>
+            <value>A4</value>
+          </category>
+          <category>
+            <label>Assistant Professor</label>
+            <value>A5</value>
+          </category>
+          <category>
+            <label>Associate Professor</label>
+            <value>A6</value>
+          </category>
+          <category>
+            <label>Professor</label>
+            <value>A7</value>
+          </category>
+          <category>
+            <label>Healthcare professional</label>
+            <value>A8</value>
+          </category>
+          <category>
+            <label>Business or industry professional</label>
+            <value>A9</value>
+          </category>
+          <category>
+            <label>Other</label>
+            <value>A10</value>
+          </category>
+          <category>
+            <label>Prefer not to say</label>
+            <value>A11</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>Please select your current institution type:</text>
+      <response varName="Institution">
+        <fixed>
+          <category>
+            <label>University</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>Non-university research institution</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>Hospital/medical centre/clinic</label>
+            <value>A3</value>
+          </category>
+          <category>
+            <label>Business or industry</label>
+            <value>A4</value>
+          </category>
+          <category>
+            <label>Other</label>
+            <value>A5</value>
+          </category>
+          <category>
+            <label>Prefer not to say</label>
+            <value>A6</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+  </section>
+  <section id="984">
+    <sectionInfo>
+      <position>title</position>
+      <text>Corresponding authorships: articles and preprints</text>
+      <administration>self</administration>
+    </sectionInfo>
+    <question>
+      <text>How many articles have you published in a scientific journal &lt;u&gt;as a corresponding author&lt;/u&gt; in the past 5 years?</text>
+      <response varName="NPublishedCor">
+        <fixed>
+          <category>
+            <label>0</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>1-2</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>3-5</label>
+            <value>A3</value>
+          </category>
+          <category>
+            <label>6-10</label>
+            <value>A4</value>
+          </category>
+          <category>
+            <label>11-20</label>
+            <value>A5</value>
+          </category>
+          <category>
+            <label>21+</label>
+            <value>A6</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>With respect to articles that you have published in a scientific journal as a corresponding author in the past 5 years, please select which statement applies:</text>
+      <directive>
+        <position>during</position>
+        <text>&lt;p&gt;* Here we define a preprint as a version of a scientific article that is deposited to an open, online repository (not limited to bioRxiv) at any point prior to acceptance for publication in a scientific journal.&lt;/p&gt;</text>
+        <administration>self</administration>
+      </directive>
+      <response varName="PDepositedCor">
+        <fixed>
+          <category>
+            <label>All of these articles were also deposited as preprints*</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>Some of these articles were also deposited as preprints*</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>None of these articles were also deposited as preprints*</label>
+            <value>A3</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+  </section>
+  <section id="986">
+    <sectionInfo>
+      <position>title</position>
+      <text>Corresponding authorships: preprint motivations</text>
+      <administration>self</administration>
+    </sectionInfo>
+    <question>
+      <text>$(document).ready(function(){&#13;
+	$('head').append('\&#13;
+		th.answertext {\&#13;
+			padding-top:15px !important;\&#13;
+			padding-bottom:15px !important;\&#13;
+			padding-left: 10px !important; \&#13;
+		}\&#13;
+		td.answer-item {\&#13;
+			padding-top:25px !important;\&#13;
+			padding-bottom:25px !important;\&#13;
+		}\&#13;
+	');&#13;
+});&#13;
+&#13;
+&lt;p&gt;You indicated that you deposited preprints for &lt;u&gt;some&lt;/u&gt; of the articles that you published in a scientific journal as a corresponding author in the past 5 years.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;Considering these articles, please select your level of agreement with the following statements:&lt;/p&gt;</text>
+      <subQuestion varName="CorSomeComparison_A1">
+        <text>The articles that were deposited as preprints were of a higher scientific quality than those that were not deposited as preprints</text>
+      </subQuestion>
+      <subQuestion varName="CorSomeComparison_A2">
+        <text>The articles that were deposited as preprints contained more exciting/novel results than those that were not deposited as preprints</text>
+      </subQuestion>
+      <subQuestion varName="CorSomeComparison_A3">
+        <text>The articles that were deposited as preprints had a greater societal value/significance than those that were not deposited as preprints</text>
+      </subQuestion>
+      <subQuestion varName="CorSomeComparison_A4">
+        <text>The articles that were deposited as preprints were published in journals with higher impact factors than those not deposited as preprints</text>
+      </subQuestion>
+      <subQuestion varName="CorSomeComparison_A5">
+        <text>I expected the articles that were deposited as preprints to receive more citations than those not deposited as preprints</text>
+      </subQuestion>
+      <subQuestion varName="CorSomeComparison_A6">
+        <text>I expected the articles that were deposited as preprints to be disseminated more widely online (e.g. on social media) than those not deposited as preprints</text>
+      </subQuestion>
+      <response varName="CorSomeComparison">
+        <fixed>
+          <category>
+            <label>Strongly disagree</label>
+            <value>1</value>
+          </category>
+          <category>
+            <label>Disagree</label>
+            <value>2</value>
+          </category>
+          <category>
+            <label>Neutral</label>
+            <value>3</value>
+          </category>
+          <category>
+            <label>Agree</label>
+            <value>4</value>
+          </category>
+          <category>
+            <label>Strongly agree</label>
+            <value>5</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>(Optional) Were there any other differences between the articles you chose to deposit as preprints versus those you did not deposit, or differences in your expections for how the articles would be received in your community?</text>
+      <response varName="CorComparisonFree">
+        <free>
+          <format>longtext</format>
+          <length>40</length>
+          <label/>
+        </free>
+      </response>
+    </question>
+    <question>
+      <text>&lt;p&gt;Considering only the articles that &lt;u&gt;were&lt;/u&gt; deposited as preprints, please select your level of agreement with the following statements:&lt;/p&gt;</text>
+      <subQuestion varName="CorSomeDeposited_A1">
+        <text>The decision to deposit articles as preprints was the free decision of the author(s)</text>
+      </subQuestion>
+      <subQuestion varName="CorSomeDeposited_A2">
+        <text>It was necessary to deposit articles as preprints to comply with an institutional open access/preprint policy</text>
+      </subQuestion>
+      <subQuestion varName="CorSomeDeposited_A3">
+        <text>It was necessary to deposit articles as preprints to comply with a funding agency's open access/preprint policy</text>
+      </subQuestion>
+      <subQuestion varName="CorSomeDeposited_A4">
+        <text>It was usually my suggestion to deposit articles as preprints</text>
+      </subQuestion>
+      <subQuestion varName="CorSomeDeposited_A5">
+        <text>It was usually my co-authors suggestion to deposit articles as preprints</text>
+      </subQuestion>
+      <subQuestion varName="CorSomeDeposited_A6">
+        <text>Preprints were deposited to increase awareness of my/our research</text>
+      </subQuestion>
+      <subQuestion varName="CorSomeDeposited_A7">
+        <text>Preprints were deposited to stake a priority claim on my/our findings</text>
+      </subQuestion>
+      <subQuestion varName="CorSomeDeposited_A8">
+        <text>Preprints were deposited to benefit the scientific enterprise</text>
+      </subQuestion>
+      <subQuestion varName="CorSomeDeposited_A9">
+        <text>Preprints were deposited to receive more feedback on my/our work</text>
+      </subQuestion>
+      <subQuestion varName="CorSomeDeposited_A10">
+        <text>Preprints were deposited to share my/our findings more quickly</text>
+      </subQuestion>
+      <subQuestion varName="CorSomeDeposited_A11">
+        <text>Depositing preprints had positive benefits in terms of citations</text>
+      </subQuestion>
+      <subQuestion varName="CorSomeDeposited_A12">
+        <text>Depositing preprints had positive benefits in terms of other forms of online dissemination (e.g. sharing on social media)</text>
+      </subQuestion>
+      <response varName="CorSomeDeposited">
+        <fixed>
+          <category>
+            <label>Strongly disagree</label>
+            <value>sd</value>
+          </category>
+          <category>
+            <label>Disagree</label>
+            <value>d</value>
+          </category>
+          <category>
+            <label>Neutral</label>
+            <value>n</value>
+          </category>
+          <category>
+            <label>Agree</label>
+            <value>a</value>
+          </category>
+          <category>
+            <label>Strongly agree</label>
+            <value>sa</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>$(document).ready(function(){&#13;
+	$('head').append('\&#13;
+		th.answertext {\&#13;
+			padding-top:15px !important;\&#13;
+			padding-bottom:15px !important;\&#13;
+			padding-left: 10px !important; \&#13;
+		}\&#13;
+		td.answer-item {\&#13;
+			padding-top:25px !important;\&#13;
+			padding-bottom:25px !important;\&#13;
+		}\&#13;
+	');&#13;
+});&#13;
+&#13;
+&lt;p&gt;You indicated that you deposited preprints for &lt;u&gt;all&lt;/u&gt; of the articles that you published in a scientific journal as a corresponding author in the past 5 years.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;Considering these articles, please select your level of agreement with the following statements:&lt;/p&gt;</text>
+      <subQuestion varName="CorAllDeposited_A1">
+        <text>The decision to deposit articles as preprints was the free decision of the author(s)</text>
+      </subQuestion>
+      <subQuestion varName="CorAllDeposited_A2">
+        <text>It was necessary to deposit articles as preprints to comply with an institutional open access/preprint policy</text>
+      </subQuestion>
+      <subQuestion varName="CorAllDeposited_A3">
+        <text>It was necessary to deposit articles as preprints to comply with a funding agency's open access/preprint policy</text>
+      </subQuestion>
+      <subQuestion varName="CorAllDeposited_A4">
+        <text>It was usually my suggestion to deposit articles as preprints</text>
+      </subQuestion>
+      <subQuestion varName="CorAllDeposited_A5">
+        <text>It was usually my co-authors suggestion to deposit articles as preprints</text>
+      </subQuestion>
+      <subQuestion varName="CorAllDeposited_A6">
+        <text>Preprints were deposited to increase awareness of my/our research</text>
+      </subQuestion>
+      <subQuestion varName="CorAllDeposited_A7">
+        <text>Preprints were deposited to stake a priority claim on my/our findings</text>
+      </subQuestion>
+      <subQuestion varName="CorAllDeposited_A8">
+        <text>Preprints were deposited to benefit the scientific enterprise</text>
+      </subQuestion>
+      <subQuestion varName="CorAllDeposited_A9">
+        <text>Preprints were deposited to receive more feedback on my/our work</text>
+      </subQuestion>
+      <subQuestion varName="CorAllDeposited_A10">
+        <text>Preprints were deposited to share my/our findings more quickly</text>
+      </subQuestion>
+      <subQuestion varName="CorAllDeposited_A11">
+        <text>Depositing preprints had positive benefits in terms of citations</text>
+      </subQuestion>
+      <subQuestion varName="CorAllDeposited_A12">
+        <text>Depositing preprints had positive benefits in terms of other forms of online dissemination (e.g. sharing on social media)</text>
+      </subQuestion>
+      <response varName="CorAllDeposited">
+        <fixed>
+          <category>
+            <label>Strongly disagree</label>
+            <value>sd</value>
+          </category>
+          <category>
+            <label>Disagree</label>
+            <value>d</value>
+          </category>
+          <category>
+            <label>Neutral</label>
+            <value>n</value>
+          </category>
+          <category>
+            <label>Agree</label>
+            <value>a</value>
+          </category>
+          <category>
+            <label>Strongly agree</label>
+            <value>sa</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>(Optional) Were there any additional reasons that motivated you to deposit these articles as preprints?</text>
+      <response varName="CorDepositedFree">
+        <free>
+          <format>longtext</format>
+          <length>40</length>
+          <label/>
+        </free>
+      </response>
+    </question>
+    <question>
+      <text>Considering only the articles that &lt;u&gt;were not&lt;/u&gt; deposited as preprints, please select your level of agreement with the following statements:</text>
+      <subQuestion varName="CorSomeNotDeposited_A1">
+        <text>I was unaware of the option to deposit preprints at that time</text>
+      </subQuestion>
+      <subQuestion varName="CorSomeNotDeposited_A2">
+        <text>The journal(s) I wanted to submit to did not allow prior posting of preprints</text>
+      </subQuestion>
+      <subQuestion varName="CorSomeNotDeposited_A3">
+        <text>I was not allowed to deposit these articles as preprints (e.g. due to institutional or funding agency policies)</text>
+      </subQuestion>
+      <subQuestion varName="CorSomeNotDeposited_A4">
+        <text>I did not want to deposit these articles as preprints</text>
+      </subQuestion>
+      <subQuestion varName="CorSomeNotDeposited_A5">
+        <text>I wanted to deposit these articles as preprints but my co-authors disagreed</text>
+      </subQuestion>
+      <subQuestion varName="CorSomeNotDeposited_A6">
+        <text>Depositing a preprint would have had negative effects for my/our research</text>
+      </subQuestion>
+      <subQuestion varName="CorSomeNotDeposited_A7">
+        <text>I did not want anyone else to see my/our preprint and publish before us</text>
+      </subQuestion>
+      <subQuestion varName="CorSomeNotDeposited_A8">
+        <text>My/our findings were controversial and needed to be evaluated by peer-review before being published</text>
+      </subQuestion>
+      <subQuestion varName="CorSomeNotDeposited_A9">
+        <text>My/our work did not fit within the scope of any preprint repository</text>
+      </subQuestion>
+      <response varName="CorSomeNotDeposited">
+        <fixed>
+          <category>
+            <label>Strongly disagree</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>Disagree</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>Neutral</label>
+            <value>A3</value>
+          </category>
+          <category>
+            <label>Agree</label>
+            <value>A4</value>
+          </category>
+          <category>
+            <label>Strongly agree</label>
+            <value>A5</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>$(document).ready(function(){&#13;
+	$('head').append('\&#13;
+		th.answertext {\&#13;
+			padding-top:15px !important;\&#13;
+			padding-bottom:15px !important;\&#13;
+			padding-left: 10px !important; \&#13;
+		}\&#13;
+		td.answer-item {\&#13;
+			padding-top:25px !important;\&#13;
+			padding-bottom:25px !important;\&#13;
+		}\&#13;
+	');&#13;
+});&#13;
+&#13;
+&lt;p&gt;You indicated that you deposited preprints for &lt;u&gt;none&lt;/u&gt; of the articles that you published in a scientific journal as a corresponding author in the past 5 years.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;Considering these articles, please select your level of agreement with the following statements:&lt;/p&gt;</text>
+      <subQuestion varName="CorNoneNotDeposited_A1">
+        <text>I was unaware of the option to deposit preprints at that time</text>
+      </subQuestion>
+      <subQuestion varName="CorNoneNotDeposited_A2">
+        <text>The journal(s) I wanted to submit to did not allow prior posting of preprints</text>
+      </subQuestion>
+      <subQuestion varName="CorNoneNotDeposited_A3">
+        <text>I was not allowed to deposit these articles as preprints (e.g. due to institutional or funding agency policies)</text>
+      </subQuestion>
+      <subQuestion varName="CorNoneNotDeposited_A4">
+        <text>I did not want to deposit these articles as preprints</text>
+      </subQuestion>
+      <subQuestion varName="CorNoneNotDeposited_A5">
+        <text>I wanted to deposit these articles as preprints but my co-authors disagreed</text>
+      </subQuestion>
+      <subQuestion varName="CorNoneNotDeposited_A6">
+        <text>Depositing a preprint would have had negative effects for my/our research</text>
+      </subQuestion>
+      <subQuestion varName="CorNoneNotDeposited_A7">
+        <text>I did not want anyone else to see my/our preprint and publish before us</text>
+      </subQuestion>
+      <subQuestion varName="CorNoneNotDeposited_A8">
+        <text>My/our findings were controversial and needed to be evaluated by peer-review before being published</text>
+      </subQuestion>
+      <subQuestion varName="CorNoneNotDeposited_A9">
+        <text>My/our work did not fit within the scope of any preprint repository</text>
+      </subQuestion>
+      <response varName="CorNoneNotDeposited">
+        <fixed>
+          <category>
+            <label>Strongly disagree</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>Disagree</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>Neutral</label>
+            <value>A3</value>
+          </category>
+          <category>
+            <label>Agree</label>
+            <value>A4</value>
+          </category>
+          <category>
+            <label>Strongly agree</label>
+            <value>A5</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>(Optional) Were there any additional reasons that caused you to not deposit these articles as preprints?</text>
+      <response varName="CorNotDepositedFree">
+        <free>
+          <format>longtext</format>
+          <length>40</length>
+          <label/>
+        </free>
+      </response>
+    </question>
+  </section>
+  <section id="996">
+    <sectionInfo>
+      <position>title</position>
+      <text>Co- authorships: articles and preprints</text>
+      <administration>self</administration>
+    </sectionInfo>
+    <question>
+      <text>How many articles have you published in a scientific journal &lt;u&gt;in any other position than as a corresponding author&lt;/u&gt; in the past 5 years?</text>
+      <response varName="NPublishedCo">
+        <fixed>
+          <category>
+            <label>0</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>1-2</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>3-5</label>
+            <value>A3</value>
+          </category>
+          <category>
+            <label>6-10</label>
+            <value>A4</value>
+          </category>
+          <category>
+            <label>11-20</label>
+            <value>A5</value>
+          </category>
+          <category>
+            <label>21+</label>
+            <value>A6</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>With respect to articles that you have published in a scientific journal in any other position than as a corresponding author in the past 5 years, please select which statement applies:</text>
+      <directive>
+        <position>during</position>
+        <text>* Here we define a preprint as a version of a scientific article that is deposited to an open, online repository (not limited to bioRxiv) at any point prior to acceptance for publication in a scientific journal.</text>
+        <administration>self</administration>
+      </directive>
+      <response varName="PDepositedCo">
+        <fixed>
+          <category>
+            <label>All of these articles were also deposited as preprints*</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>Some of these articles were also deposited as preprints*</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>None of these articles were also deposited as preprints*</label>
+            <value>A3</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+  </section>
+  <section id="997">
+    <sectionInfo>
+      <position>title</position>
+      <text>Co-authorships: preprint motivations</text>
+      <administration>self</administration>
+    </sectionInfo>
+    <question>
+      <text>$(document).ready(function(){&#13;
+	$('head').append('\&#13;
+		th.answertext {\&#13;
+			padding-top:15px !important;\&#13;
+			padding-bottom:15px !important;\&#13;
+			padding-left: 10px !important; \&#13;
+		}\&#13;
+		td.answer-item {\&#13;
+			padding-top:25px !important;\&#13;
+			padding-bottom:25px !important;\&#13;
+		}\&#13;
+	');&#13;
+});&#13;
+&#13;
+&lt;p&gt;You indicated that you deposited preprints for &lt;u&gt;some&lt;/u&gt; of the articles that you published in a scientific journal in any other position than as a corresponding author in the past 5 years.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;Considering these articles, please select your level of agreement with the following statements:&lt;/p&gt;</text>
+      <subQuestion varName="CoSomeComparison_A1">
+        <text>The articles that were deposited as preprints were of a higher scientific quality than those that were not deposited as preprints</text>
+      </subQuestion>
+      <subQuestion varName="CoSomeComparison_A2">
+        <text>The articles that were deposited as preprints contained more exciting/novel results than those that were not deposited as preprints</text>
+      </subQuestion>
+      <subQuestion varName="CoSomeComparison_A3">
+        <text>The articles that were deposited as preprints had a greater societal value/significance than those that were not deposited as preprints</text>
+      </subQuestion>
+      <subQuestion varName="CoSomeComparison_A4">
+        <text>The articles that were deposited as preprints were published in journals with higher impact factors than those not deposited as preprints</text>
+      </subQuestion>
+      <subQuestion varName="CoSomeComparison_A5">
+        <text>I expected the articles that were deposited as preprints to receive more citations than those not deposited as preprints</text>
+      </subQuestion>
+      <subQuestion varName="CoSomeComparison_A6">
+        <text>I expected the articles that were deposited as preprints to be disseminated more widely online (e.g. on social media) than those not deposited as preprints</text>
+      </subQuestion>
+      <response varName="CoSomeComparison">
+        <fixed>
+          <category>
+            <label>Strongly disagree</label>
+            <value>1</value>
+          </category>
+          <category>
+            <label>Disagree</label>
+            <value>2</value>
+          </category>
+          <category>
+            <label>Neutral</label>
+            <value>3</value>
+          </category>
+          <category>
+            <label>Agree</label>
+            <value>4</value>
+          </category>
+          <category>
+            <label>Strongly agree</label>
+            <value>5</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>(Optional) Were there any other differences between the articles you chose to deposit as preprints versus those you did not deposit, or differences in your expections for how the articles would be received in your community?</text>
+      <response varName="CoComparisonFree">
+        <free>
+          <format>longtext</format>
+          <length>40</length>
+          <label/>
+        </free>
+      </response>
+    </question>
+    <question>
+      <text>Considering only the articles that &lt;u&gt;were&lt;/u&gt; deposited as preprints, please select your level of agreement with the following statements:</text>
+      <subQuestion varName="CoSomeDeposited_A1">
+        <text>The decision to deposit articles as preprints was the free decision of the author(s)</text>
+      </subQuestion>
+      <subQuestion varName="CoSomeDeposited_A2">
+        <text>It was necessary to deposit articles as preprints to comply with an institutional open access/preprint policy</text>
+      </subQuestion>
+      <subQuestion varName="CoSomeDeposited_A3">
+        <text>It was necessary to deposit articles as preprints to comply with a funding agency's open access/preprint policy</text>
+      </subQuestion>
+      <subQuestion varName="CoSomeDeposited_A4">
+        <text>It was usually my suggestion to deposit articles as preprints</text>
+      </subQuestion>
+      <subQuestion varName="CoSomeDeposited_A5">
+        <text>It was usually my co-authors suggestion to deposit articles as preprints</text>
+      </subQuestion>
+      <subQuestion varName="CoSomeDeposited_A6">
+        <text>Preprints were deposited to increase awareness of my/our research</text>
+      </subQuestion>
+      <subQuestion varName="CoSomeDeposited_A7">
+        <text>Preprints were deposited to stake a priority claim on my/our findings</text>
+      </subQuestion>
+      <subQuestion varName="CoSomeDeposited_A8">
+        <text>Preprints were deposited to benefit the scientific enterprise</text>
+      </subQuestion>
+      <subQuestion varName="CoSomeDeposited_A9">
+        <text>Preprints were deposited to receive more feedback on my/our work</text>
+      </subQuestion>
+      <subQuestion varName="CoSomeDeposited_A10">
+        <text>Preprints were deposited to share my/our findings more quickly</text>
+      </subQuestion>
+      <subQuestion varName="CoSomeDeposited_A11">
+        <text>Depositing preprints had positive benefits in terms of citations</text>
+      </subQuestion>
+      <subQuestion varName="CoSomeDeposited_A12">
+        <text>Depositing preprints had positive benefits in terms of other forms of online dissemination (e.g. sharing on social media)</text>
+      </subQuestion>
+      <response varName="CoSomeDeposited">
+        <fixed>
+          <category>
+            <label>Strongly disagree</label>
+            <value>sd</value>
+          </category>
+          <category>
+            <label>Disagree</label>
+            <value>d</value>
+          </category>
+          <category>
+            <label>Neutral</label>
+            <value>n</value>
+          </category>
+          <category>
+            <label>Agree</label>
+            <value>a</value>
+          </category>
+          <category>
+            <label>Strongly agree</label>
+            <value>sa</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>$(document).ready(function(){&#13;
+	$('head').append('\&#13;
+		th.answertext {\&#13;
+			padding-top:15px !important;\&#13;
+			padding-bottom:15px !important;\&#13;
+			padding-left: 10px !important; \&#13;
+		}\&#13;
+		td.answer-item {\&#13;
+			padding-top:25px !important;\&#13;
+			padding-bottom:25px !important;\&#13;
+		}\&#13;
+	');&#13;
+});&#13;
+&#13;
+&lt;p&gt;You indicated that you deposited preprints for &lt;u&gt;all&lt;/u&gt; of the articles that you published in a scientific journal in any other position than as a corresponding author in the past 5 years.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;Considering these articles, please select your level of agreement with the following statements:&lt;/p&gt;</text>
+      <subQuestion varName="CoAllDeposited_A1">
+        <text>The decision to deposit articles as preprints was the free decision of the author(s)</text>
+      </subQuestion>
+      <subQuestion varName="CoAllDeposited_A2">
+        <text>It was necessary to deposit articles as preprints to comply with an institutional open access/preprint policy</text>
+      </subQuestion>
+      <subQuestion varName="CoAllDeposited_A3">
+        <text>It was necessary to deposit articles as preprints to comply with a funding agency's open access/preprint policy</text>
+      </subQuestion>
+      <subQuestion varName="CoAllDeposited_A4">
+        <text>It was usually my suggestion to deposit articles as preprints</text>
+      </subQuestion>
+      <subQuestion varName="CoAllDeposited_A5">
+        <text>It was usually my co-authors suggestion to deposit articles as preprints</text>
+      </subQuestion>
+      <subQuestion varName="CoAllDeposited_A6">
+        <text>Preprints were deposited to increase awareness of my/our research</text>
+      </subQuestion>
+      <subQuestion varName="CoAllDeposited_A7">
+        <text>Preprints were deposited to stake a priority claim on my/our findings</text>
+      </subQuestion>
+      <subQuestion varName="CoAllDeposited_A8">
+        <text>Preprints were deposited to benefit the scientific enterprise</text>
+      </subQuestion>
+      <subQuestion varName="CoAllDeposited_A9">
+        <text>Preprints were deposited to receive more feedback on my/our work</text>
+      </subQuestion>
+      <subQuestion varName="CoAllDeposited_A10">
+        <text>Preprints were deposited to share my/our findings more quickly</text>
+      </subQuestion>
+      <subQuestion varName="CoAllDeposited_A11">
+        <text>Depositing preprints had positive benefits in terms of citations</text>
+      </subQuestion>
+      <subQuestion varName="CoAllDeposited_A12">
+        <text>Depositing preprints had positive benefits in terms of other forms of online dissemination (e.g. sharing on social media)</text>
+      </subQuestion>
+      <response varName="CoAllDeposited">
+        <fixed>
+          <category>
+            <label>Strongly disagree</label>
+            <value>sd</value>
+          </category>
+          <category>
+            <label>Disagree</label>
+            <value>d</value>
+          </category>
+          <category>
+            <label>Neutral</label>
+            <value>n</value>
+          </category>
+          <category>
+            <label>Agree</label>
+            <value>a</value>
+          </category>
+          <category>
+            <label>Strongly agree</label>
+            <value>sa</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>(Optional) Were there any additional reasons that motivated you to deposit these articles as preprints?</text>
+      <response varName="CoDepositedFree">
+        <free>
+          <format>longtext</format>
+          <length>40</length>
+          <label/>
+        </free>
+      </response>
+    </question>
+    <question>
+      <text>Considering only the articles that &lt;u&gt;were not&lt;/u&gt; deposited as preprints, please select your level of agreement with the following statements:</text>
+      <subQuestion varName="CoSomeNotDeposited_A1">
+        <text>I was unaware of the option to deposit preprints at that time</text>
+      </subQuestion>
+      <subQuestion varName="CoSomeNotDeposited_A2">
+        <text>The journal(s) I wanted to submit to did not allow prior posting of preprints</text>
+      </subQuestion>
+      <subQuestion varName="CoSomeNotDeposited_A3">
+        <text>I was not allowed to deposit these articles as preprints (e.g. due to institutional or funding agency policies)</text>
+      </subQuestion>
+      <subQuestion varName="CoSomeNotDeposited_A4">
+        <text>I did not want to deposit these articles as preprints</text>
+      </subQuestion>
+      <subQuestion varName="CoSomeNotDeposited_A5">
+        <text>I wanted to deposit these articles as preprints but my co-authors disagreed</text>
+      </subQuestion>
+      <subQuestion varName="CoSomeNotDeposited_A6">
+        <text>Depositing a preprint would have had negative effects for my/our research</text>
+      </subQuestion>
+      <subQuestion varName="CoSomeNotDeposited_A7">
+        <text>I did not want anyone else to see my/our preprint and publish before us</text>
+      </subQuestion>
+      <subQuestion varName="CoSomeNotDeposited_A8">
+        <text>My/our findings were controversial and needed to be evaluated by peer-review before being published</text>
+      </subQuestion>
+      <subQuestion varName="CoSomeNotDeposited_A9">
+        <text>My/our work did not fit within the scope of any preprint repository</text>
+      </subQuestion>
+      <response varName="CoSomeNotDeposited">
+        <fixed>
+          <category>
+            <label>Strongly disagree</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>Disagree</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>Neutral</label>
+            <value>A3</value>
+          </category>
+          <category>
+            <label>Agree</label>
+            <value>A4</value>
+          </category>
+          <category>
+            <label>Strongly agree</label>
+            <value>A5</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>$(document).ready(function(){&#13;
+	$('head').append('\&#13;
+		th.answertext {\&#13;
+			padding-top:15px !important;\&#13;
+			padding-bottom:15px !important;\&#13;
+			padding-left: 10px !important; \&#13;
+		}\&#13;
+		td.answer-item {\&#13;
+			padding-top:25px !important;\&#13;
+			padding-bottom:25px !important;\&#13;
+		}\&#13;
+	');&#13;
+});&#13;
+&#13;
+&lt;p&gt;You indicated that you deposited preprints for &lt;u&gt;none&lt;/u&gt; of the articles that you published in a scientific journal in any other position than as a corresponding author in the past 5 years.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;Considering these articles, please select your level of agreement with the following statements:&lt;/p&gt;</text>
+      <subQuestion varName="CoNoneNotDeposited_A1">
+        <text>I was unaware of the option to deposit preprints at that time</text>
+      </subQuestion>
+      <subQuestion varName="CoNoneNotDeposited_A2">
+        <text>The journal(s) I wanted to submit to did not allow prior posting of preprints</text>
+      </subQuestion>
+      <subQuestion varName="CoNoneNotDeposited_A3">
+        <text>I was not allowed to deposit these articles as preprints (e.g. due to institutional or funding agency policies)</text>
+      </subQuestion>
+      <subQuestion varName="CoNoneNotDeposited_A4">
+        <text>I did not want to deposit these articles as preprints</text>
+      </subQuestion>
+      <subQuestion varName="CoNoneNotDeposited_A5">
+        <text>I wanted to deposit these articles as preprints but my co-authors disagreed</text>
+      </subQuestion>
+      <subQuestion varName="CoNoneNotDeposited_A6">
+        <text>Depositing a preprint would have had negative effects for my/our research</text>
+      </subQuestion>
+      <subQuestion varName="CoNoneNotDeposited_A7">
+        <text>I did not want anyone else to see my/our preprint and publish before us</text>
+      </subQuestion>
+      <subQuestion varName="CoNoneNotDeposited_A8">
+        <text>My/our findings were controversial and needed to be evaluated by peer-review before being published</text>
+      </subQuestion>
+      <subQuestion varName="CoNoneNotDeposited_A9">
+        <text>My/our work did not fit within the scope of any preprint repository</text>
+      </subQuestion>
+      <response varName="CoNoneNotDeposited">
+        <fixed>
+          <category>
+            <label>Strongly disagree</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>Disagree</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>Neutral</label>
+            <value>A3</value>
+          </category>
+          <category>
+            <label>Agree</label>
+            <value>A4</value>
+          </category>
+          <category>
+            <label>Strongly agree</label>
+            <value>A5</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>(Optional) Were there any additional reasons that caused you to not deposit these articles as preprints?</text>
+      <response varName="CoNotDepositedFree">
+        <free>
+          <format>longtext</format>
+          <length>40</length>
+          <label/>
+        </free>
+      </response>
+    </question>
+  </section>
+  <section id="995">
+    <sectionInfo>
+      <position>title</position>
+      <text>Additional Feedback</text>
+      <administration>self</administration>
+    </sectionInfo>
+    <question>
+      <text>(Optional) Please provide any additional feedback on this survey:</text>
+      <response varName="FeedbackSurvey">
+        <free>
+          <format>longtext</format>
+          <length>40</length>
+          <label/>
+        </free>
+      </response>
+    </question>
+    <question>
+      <text>Would you be like to be contacted to be notified of eventual results of this study, or be interested in participating in future follow-up studies?</text>
+      <response varName="FollowUpParticipant_A1">
+        <fixed>
+          <category>
+            <label>Yes, please contact me to inform me when the study results are available</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="FollowUpParticipant_A2">
+        <fixed>
+          <category>
+            <label>Yes, I would be interested in participating in future follow-up studies</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>Please provide your email address below to be contacted. Email addresses will be treated confidentially and removed from any published datasets resulting from this study.</text>
+      <response varName="FollowUpEmail">
+        <free>
+          <format>longtext</format>
+          <length>24</length>
+          <label/>
+        </free>
+      </response>
+    </question>
+  </section>
+</questionnaire>

@@ -1,0 +1,106 @@
+---
+title: "R Notebook"
+---
+
+# Load libraries ---------------------------------------------------------------
+
+```{r}
+
+library(tidyverse)
+library(lubridate)
+library(rcrossref)
+library(rvest)
+
+```
+
+# Preprint metadata ------------------------------------------------------------
+
+```{r}
+
+startdates <- seq(ymd("2013-11-01"), ymd("2018-12-01"), by = "months")
+enddates <- startdates %m+% months(1)
+months <- length(startdates)
+startdate <- startdates[1]
+enddate <- enddates[length(enddates)]
+
+count_preprints <- cr_types(types="posted-content", works=TRUE, 
+                            facet="publisher-name:*", 
+                            filter=c(member = 246, 
+                            from_posted_date = as.character(startdate), 
+                            until_posted_date = as.character(enddate)),
+                            limit=0)$facets$`publisher-name`$V1
+
+# Retrieve DOI and issued date for each preprints
+data <- cr_types(types="posted-content", works=TRUE, 
+                 facet="publisher-name:*", filter=c(member = 246, 
+                 from_posted_date = as.character(startdate), 
+                 until_posted_date = as.character(enddate)), 
+                 limit=1000, cursor="*", cursor_max = count_preprints, 
+                 select=c("DOI", "issued"))$data
+
+# Build data frame
+preprints <- tibble(
+  "doi" = data$doi,
+  "issued" = as_date(data$issued)
+)
+
+# Write results to csv
+write.csv(preprints, 
+          file="data/emails/preprints.csv", 
+          row.names=FALSE, 
+          fileEncoding="UTF-8")
+
+```
+
+# Scrape email addresses -------------------------------------------------------
+
+```{r}
+
+retrieveEmails <- function(doi) {
+  
+  # Query URL
+  url <- paste0("https://doi.org/", as.character(doi))
+  
+  result <- tryCatch({
+      
+    # Read page html
+    html <- read_html(url)
+      
+    # Parse relevant html nodes
+    emails <- html %>%
+      html_nodes("meta[name='citation_author_email'][content]") %>%
+      html_attr('content')
+      
+    # Return data as list
+    list(
+      "doi" = doi,
+      "emails" = as.list(emails)
+    )
+  },
+  error = function(e) {
+    # If call results in error, return NA
+    list(
+      "doi" = doi,
+      "email" = NA
+    )
+  })
+  # Return result
+  result
+}
+
+dois <- preprints %>% pull(doi)
+
+data <- map(dois, retrieveEmails)
+
+emails_df <- data.frame(t(sapply(data,c)))
+
+emails_df <- emails_df %>% unnest(emails) %>% 
+  mutate(doi = as.character(doi), 
+         emails = as.character(emails))
+
+write_csv(emails_df, "data/emails_raw.csv")
+
+```
+
+
+
