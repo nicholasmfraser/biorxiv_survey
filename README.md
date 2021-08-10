@@ -13,4 +13,4 @@ An overview of the most important files and directories is provided below:
 - [`main_analysis.Rmd`](main_analysis.Rmd) documents the main analysis of survey responses, including the generation of all figures shown in the manuscript.
 - [`regression_analysis.Rmd`](regression_analysis.Rmd) documents the ordinal logistic regression analysis on survey response data as documented in the manuscript.
 - [`data/`](data) contains anonymised survey response data ( [`data/response_data_anonymised.csv`](data/response_data_anonymised.csv)). Note that free-text comments have been removed from this dataset to prevent participant identification.
-- [`outputs/figures/`](figures) contains all figures (in .png format) generated from [`main_analysis.Rmd`](main_analysis.Rmd).
+- [`outputs/figures/`](outputs/figures) contains all figures (in .png format) generated from [`main_analysis.Rmd`](main_analysis.Rmd).
