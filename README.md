@@ -1,8 +1,8 @@
-## Motivations, demotivations and selection biases when posting preprints: a survey of bioRxiv authors.
+## Motivations, concerns and selection biases when posting preprints: a survey of bioRxiv authors
 
 This repository contains the underlying code and data for the study:
 
-Fraser, N., Mayr, P., and Peters, I. (2021). Motivations, demotivations and selection biases when posting preprints: a survey of bioRxiv authors. **Link to be added**
+Fraser, N., Mayr, P., and Peters, I. (2021). Motivations, concerns and selection biases when posting preprints: a survey of bioRxiv authors.
 
 The code and data contained in this repository is also archived via Zenodo: https://zenodo.org/10.5281/zenodo.5166749
 
