@@ -2,7 +2,7 @@
 
 This repository contains the underlying code and data for the study:
 
-Fraser, N., Mayr, P., and Peters, I. (2021). Motivations, concerns and selection biases when posting preprints: a survey of bioRxiv authors.
+[Fraser, N., Mayr, P., and Peters, I. (2021). Motivations, concerns and selection biases when posting preprints: a survey of bioRxiv authors.](https://doi.org/10.1101/2021.09.07.459259)
 
 The code and data contained in this repository is also archived via Zenodo: https://doi.org/10.5281/zenodo.5255880
 
